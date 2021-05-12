@@ -1,0 +1,28 @@
+Felépítés:
+1 - Random szám generálás.
+2 - Szálak létrehozása.
+3 - 10db Szál létrehozása külön - külön.
+4 - Kiiratások.
+5 - Void maximum kereső függvény.
+
+1.)
+Random szám generálás, srandtime-val,
+for ciklusban legenerálok 1-1000 közötti számokat és eltárolom a tömbben.
+
+2.) - 3.)
+Szálak létrehozása formailag:
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);
+
+- A függvény egy új szálat indít ezzel a hívással. A létrejött új szál megkezdi a hívást a start_routine()-val.
+- Ennek segítségével tudunk több szálat létrehozni (ezesetben 10-et), hogy a külön szálakon futatthassuk a max kereső függvényt.
+- Az assert() segítségével tudjuk eldönteni, hogy fusson-e a program vagy sem. (pl.: ha az "eredmeny" nem igaz, akkor fusson a program)
+- Utána "oegy"-hez és "oketto"-höz hozzáadunk 100-100-at és megvizsgáljuk a következő szálat.
+
+4.)
+Egyszerű for ciklusokkal kiiratjuk a generáált tömb legnagyobbját, előtte a vizsgált szálak legnagyobbját, a szál indexét.
+
+5.)
+void maximum függvény:
+- Egy max kereső programozási tétellel megkeressük az adott tömbnek a legnagyobb elemét, és ezt hívjuk meg többször a main függvényben
+- pl.: Amikor a main végén a max(0,10,maxT); -> a felosztott 10 szálon úgyszintén megkerestük a maximum értékeket, abból generátunk egy maxT[] tömböt és a maxT[] tömbben is megkerestük a maxot.
+ 
