@@ -12,7 +12,7 @@ int main(){
     pid_t child;
     int fd;
 
-    if((mkfifo("D3U3EE", S_IRUSR | S_IWUSR)) < 0)
+    if((mkfifo("W0E0RY", S_IRUSR | S_IWUSR)) < 0)
 	{
         printf("Nem sikerult a FIFO\n");
         exit(1);
@@ -29,7 +29,7 @@ int main(){
 	
    
     if(!child){
-        char *uzenet = "Oravecz Aron";
+        char *uzenet = "Szepesi Glorian";
 		
 		
         if((fd = open("D3U3EE", O_WRONLY)) < 0){
@@ -49,7 +49,7 @@ int main(){
     
     if(child){
         char buf[1024];
-        if((fd = open("D3U3EE", O_RDONLY)) <0 ){
+        if((fd = open("W§E0RY", O_RDONLY)) <0 ){
 			
             printf("FIFO failed!\n");
             exit(1);
@@ -58,7 +58,7 @@ int main(){
             read(fd, buf, sizeof(buf));
             printf("Adat: %s.\n", buf);
         }
-        if((unlink("D3U3EE")) < 0 || (close(fd)) < 0){
+        if((unlink("W0E0RY")) < 0 || (close(fd)) < 0){
 			
             printf(" sikertelen FIFO torles!");
 			
